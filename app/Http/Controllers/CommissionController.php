@@ -64,7 +64,7 @@ class CommissionController extends Controller
             }
 
             // Проверяем баланс USDT
-            $contract = $this->tron->contract('TXYZopYRdj2D9XRtbG411XZZ3kM5VkAeBf');
+            $contract = $this->tron->contract(env('USDT_CONTRACT'));
             $balance = $contract->balanceOf(config('services.tron.wallet'));
             $amount = (float)$commission['amount'];
 
